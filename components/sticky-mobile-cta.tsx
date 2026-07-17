@@ -3,7 +3,13 @@
 import { useEffect, useState } from "react"
 import { ArrowRight } from "lucide-react"
 
-export function StickyMobileCta() {
+export function StickyMobileCta({
+  href = "/#hotel",
+  label = "Shop The Edit",
+}: {
+  href?: string
+  label?: string
+}) {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -18,10 +24,10 @@ export function StickyMobileCta() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-ink/10 bg-paper/95 p-3 backdrop-blur-md lg:hidden">
       <a
-        href="#hotel"
+        href={href}
         className="flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-cream"
       >
-        Shop The Edit
+        {label}
         <ArrowRight className="h-4 w-4" />
       </a>
     </div>

@@ -4,12 +4,13 @@ import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 
 const links = [
-  { href: "#hotel", label: "The Bed" },
-  { href: "#vanity", label: "The Vanity" },
-  { href: "#ritual", label: "The Ritual" },
-  { href: "#journey", label: "The Journey" },
-  { href: "#reviews", label: "Reviews" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#hotel", label: "The Bed" },
+  { href: "/#vanity", label: "The Vanity" },
+  { href: "/#ritual", label: "The Ritual" },
+  { href: "/#journey", label: "The Journey" },
+  { href: "/scents", label: "Scents" },
+  { href: "/#reviews", label: "Reviews" },
+  { href: "/#faq", label: "FAQ" },
 ]
 
 export function Nav() {
@@ -32,11 +33,11 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-        <a href="#top" className="font-display text-xl tracking-tight">
+        <a href="/#top" className="font-display text-xl tracking-tight">
           santo <span className="italic text-brass">glam</span>
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {links.map((l) => (
             <a
               key={l.href}
@@ -50,10 +51,10 @@ export function Nav() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#hotel"
+            href="/scents"
             className="hidden rounded-full bg-ink px-5 py-2.5 text-[13px] font-bold uppercase tracking-wide text-cream transition-all hover:bg-brass sm:inline-block"
           >
-            Shop The Edit
+            Shop Scents
           </a>
           <button
             aria-label="Open menu"
@@ -79,11 +80,11 @@ export function Nav() {
               </a>
             ))}
             <a
-              href="#hotel"
+              href="/scents"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-ink px-5 py-3 text-center text-sm font-bold uppercase tracking-wide text-cream"
             >
-              Shop The Edit
+              Shop Scents
             </a>
           </nav>
         </div>

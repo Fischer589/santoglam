@@ -2,19 +2,20 @@ const columns = [
   {
     title: "Collections",
     links: [
-      { label: "The Hotel Room", href: "#hotel" },
-      { label: "The Vanity Ritual", href: "#vanity" },
-      { label: "The Ritual Hour", href: "#ritual" },
-      { label: "The Journey Kit", href: "#journey" },
-      { label: "Small Details", href: "#details" },
+      { label: "The Hotel Room", href: "/#hotel" },
+      { label: "The Vanity Ritual", href: "/#vanity" },
+      { label: "The Ritual Hour", href: "/#ritual" },
+      { label: "The Journey Kit", href: "/#journey" },
+      { label: "Small Details", href: "/#details" },
+      { label: "Scents", href: "/scents" },
     ],
   },
   {
     title: "Santo Glam",
     links: [
-      { label: "Reviews", href: "#reviews" },
-      { label: "FAQ", href: "#faq" },
-      { label: "Join the weekly edit", href: "#top" },
+      { label: "Reviews", href: "/#reviews" },
+      { label: "FAQ", href: "/#faq" },
+      { label: "Join the weekly edit", href: "/#top" },
     ],
   },
 ]
@@ -30,9 +31,9 @@ export function Footer() {
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/55">
               The curated edit of hotel-quality objects for the bed, the
-              vanity, and the ritual hour. We test, rank, and link — you skip
-              the guesswork and buy the objects that actually earn their
-              reviews.
+              vanity, and the ritual hour — plus a direct-to-you fragrance
+              edit at genuine wholesale-backed prices. We test, rank, and
+              link — you skip the guesswork.
             </p>
           </div>
 
@@ -61,8 +62,9 @@ export function Footer() {
           <p>© {new Date().getFullYear()} Santo Glam. All rights reserved.</p>
           <p>
             As an Amazon Associate, Santo Glam earns from qualifying
-            purchases. Prices and availability are accurate as of the date
-            shown and are subject to change.
+            purchases. Fragrance orders are sold directly by Santo Glam and
+            processed securely through Stripe. Prices and availability are
+            accurate as of the date shown and are subject to change.
           </p>
         </div>
       </div>
