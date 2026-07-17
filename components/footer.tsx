@@ -15,6 +15,7 @@ const columns = [
     links: [
       { label: "Reviews", href: "/#reviews" },
       { label: "FAQ", href: "/#faq" },
+      { label: "Shipping & Returns", href: "/refund-policy" },
       { label: "Join the weekly edit", href: "/#top" },
     ],
   },
@@ -32,8 +33,8 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/55">
               The curated edit of hotel-quality objects for the bed, the
               vanity, and the ritual hour — plus a direct-to-you fragrance
-              edit at genuine wholesale-backed prices. We test, rank, and
-              link — you skip the guesswork.
+              edit at genuine wholesale-backed prices, free shipping
+              included. We test, rank, and link — you skip the guesswork.
             </p>
           </div>
 

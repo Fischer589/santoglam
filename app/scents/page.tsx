@@ -10,8 +10,15 @@ import { scents } from "@/lib/scents"
 export const metadata: Metadata = {
   title: "The Scent Edit — Full-Size Designer Fragrances | Santo Glam",
   description:
-    "Genuine, full-size designer fragrances at direct prices — no department store markup. Secure checkout, real bottles, our own house edit.",
+    "Genuine, full-size designer fragrances at direct prices — no department store markup. Free shipping, secure checkout, real bottles, our own house edit.",
 }
+
+const scentsMessages = [
+  "Free shipping on every fragrance order",
+  "100% genuine, full-size bottles — never a dupe",
+  "Secure checkout by Stripe",
+  "New arrivals added regularly",
+]
 
 const mens = scents.filter((s) => s.gender === "men")
 const womens = scents.filter((s) => s.gender === "women")
@@ -19,7 +26,7 @@ const womens = scents.filter((s) => s.gender === "women")
 export default function ScentsPage() {
   return (
     <>
-      <AnnouncementBar />
+      <AnnouncementBar messages={scentsMessages} />
       <Nav />
       <main>
         {/* Hero */}
@@ -32,19 +39,20 @@ export default function ScentsPage() {
           <div className="relative mx-auto flex max-w-7xl flex-col px-6 pb-20 pt-16 lg:px-10 lg:pb-28 lg:pt-24">
             <div className="animate-fade-up flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.2em] text-brass">
               <Sparkles className="h-3.5 w-3.5" />
-              Direct from Santo Glam &middot; no department store markup
+              Direct from Santo Glam &middot; free shipping &middot; no
+              department store markup
             </div>
 
             <h1 className="animate-fade-up delay-1 mt-6 max-w-3xl font-display text-5xl font-medium leading-[1.05] tracking-tight text-ink sm:text-6xl">
               Full-size designer fragrance.{" "}
-              <span className="italic text-brass">Real bottles.</span> Real
+              <span className="italic text-brass">Free shipping.</span> Real
               savings.
             </h1>
 
             <p className="animate-fade-up delay-2 mt-6 max-w-xl text-lg leading-relaxed text-ink/70">
               No travel minis, no samples — every bottle here is the genuine,
-              full-size fragrance you already know, at a price that skips the
-              department store counter markup entirely.
+              full-size fragrance you already know, shipped free, at a price
+              that skips the department store counter markup entirely.
             </p>
 
             <div className="animate-fade-up delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -81,7 +89,7 @@ export default function ScentsPage() {
               <div className="flex items-center gap-3">
                 <Truck className="h-5 w-5 text-brass" />
                 <span className="text-sm text-ink/65">
-                  Carefully packaged, shipped to your door
+                  Free shipping, carefully packaged, on every order
                 </span>
               </div>
             </div>
@@ -100,9 +108,10 @@ export default function ScentsPage() {
             Department stores and big-box retailers add layers of margin
             before a fragrance ever reaches the shelf. We buy the same
             authentic, full-size bottles through direct wholesale channels
-            and pass almost all of that savings straight to you — every
-            price below is shown next to what it typically retails for, so
-            you can see exactly what you&apos;re saving.
+            and pass almost all of that savings straight to you — free
+            shipping included, every price below is shown next to what it
+            typically retails for, so you can see exactly what you&apos;re
+            saving.
           </p>
         </section>
 
@@ -117,7 +126,7 @@ export default function ScentsPage() {
                 Men&apos;s Fragrance
               </h2>
               <p className="mt-2 font-display text-lg italic text-ink/50">
-                Full-size. Genuine. Direct.
+                Full-size. Genuine. Direct. Free shipping.
               </p>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -139,7 +148,7 @@ export default function ScentsPage() {
                 Women&apos;s Fragrance
               </h2>
               <p className="mt-2 font-display text-lg italic text-ink/50">
-                Full-size. Genuine. Direct.
+                Full-size. Genuine. Direct. Free shipping.
               </p>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -176,6 +185,15 @@ export default function ScentsPage() {
               </div>
               <div className="rounded-2xl border border-ink/10 bg-paper/80 p-6">
                 <h3 className="font-display text-lg font-medium text-ink">
+                  Does shipping cost extra?
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/60">
+                  No — shipping is free on every order and already included
+                  in the price you see. No surprise fee at checkout.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-ink/10 bg-paper/80 p-6">
+                <h3 className="font-display text-lg font-medium text-ink">
                   How does checkout work?
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink/60">
@@ -186,11 +204,19 @@ export default function ScentsPage() {
               </div>
               <div className="rounded-2xl border border-ink/10 bg-paper/80 p-6">
                 <h3 className="font-display text-lg font-medium text-ink">
-                  What if I have a problem with my order?
+                  What if there&apos;s a problem with my order?
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink/60">
-                  Reach out and we&apos;ll make it right. We stand behind
-                  every bottle we sell.
+                  If your order arrives wrong, damaged, or incomplete, contact
+                  us within 7 days and we&apos;ll make it right with a
+                  replacement or refund. See our full{" "}
+                  <a
+                    href="/refund-policy"
+                    className="font-semibold text-ink underline underline-offset-2 hover:text-brass"
+                  >
+                    Shipping &amp; Returns policy
+                  </a>{" "}
+                  for details.
                 </p>
               </div>
             </div>
