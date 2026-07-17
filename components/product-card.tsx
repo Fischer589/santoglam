@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import { StarRating } from "@/components/star-rating"
 import type { Product } from "@/lib/products"
 
@@ -26,8 +26,15 @@ export function ProductCard({ product }: { product: Product }) {
         />
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5">
-        <div className="text-[11px] font-bold uppercase tracking-wide text-brass">
-          {product.brand}
+        <div className="flex items-center justify-between gap-2">
+          <span className="text-[11px] font-bold uppercase tracking-wide text-brass">
+            {product.brand}
+          </span>
+          {product.size && (
+            <span className="text-[11px] font-semibold uppercase tracking-wide text-ink/40">
+              {product.size}
+            </span>
+          )}
         </div>
         <h3 className="font-display text-lg font-medium leading-snug text-ink">
           {product.name}
@@ -38,13 +45,10 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="mt-1">
           <StarRating rating={product.rating} reviews={product.reviews} />
         </div>
-        <div className="mt-auto flex items-center justify-between pt-4">
-          <span className="font-display text-xl font-medium text-ink">
-            {product.price}
-          </span>
-          <span className="inline-flex items-center gap-1 rounded-full bg-ink px-4 py-2 text-xs font-bold uppercase tracking-wide text-cream transition-colors group-hover:bg-brass">
-            Shop Now
-            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+        <div className="mt-auto pt-4">
+          <span className="flex w-full items-center justify-center gap-1.5 rounded-full bg-ink px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-cream transition-colors group-hover:bg-brass">
+            Check Price on Amazon
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </span>
         </div>
       </div>

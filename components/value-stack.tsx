@@ -4,8 +4,8 @@ const rows = [
   { item: "A one-night hotel stay", price: "$320+", value: "gone by checkout" },
   { item: "A single spa day", price: "$180+", value: "gone by dinner" },
   {
-    item: "The Santo Glam candle + robe + pillowcase",
-    price: "$220",
+    item: "The candle, the robe, the pillowcase — bundled",
+    price: "Less than one night",
     value: "yours every single night",
     highlight: true,
   },
@@ -24,7 +24,7 @@ export function ValueStack() {
       </div>
 
       <div className="mt-12 overflow-hidden rounded-2xl border border-ink/10">
-        {rows.map((r, i) => (
+        {rows.map((r) => (
           <div
             key={r.item}
             className={`flex flex-col gap-2 border-b border-ink/10 p-6 last:border-b-0 sm:flex-row sm:items-center sm:justify-between ${
