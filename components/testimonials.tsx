@@ -23,13 +23,13 @@ const quotes = [
 
 export function Testimonials() {
   return (
-    <section id="reviews" className="scroll-mt-20 bg-ink py-24 text-cream">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section id="reviews" className="silk-wash grain scroll-mt-20 py-24">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-brass">
             Proof, not promises
           </p>
-          <h2 className="mt-3 font-display text-4xl font-medium sm:text-5xl">
+          <h2 className="mt-3 font-display text-4xl font-medium text-ink sm:text-5xl">
             What buyers say after they click through
           </h2>
         </div>
@@ -38,19 +38,19 @@ export function Testimonials() {
           {quotes.map((q) => (
             <figure
               key={q.name}
-              className="rounded-2xl border border-cream/15 bg-cream/[0.04] p-8"
+              className="rounded-2xl border border-ink/10 bg-paper/80 p-8 shadow-[0_20px_40px_-28px_rgb(46_39_34/0.35)] backdrop-blur-sm"
             >
               <div className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-brass text-brass" />
                 ))}
               </div>
-              <blockquote className="mt-5 font-display text-lg italic leading-relaxed text-cream/90">
+              <blockquote className="mt-5 font-display text-lg italic leading-relaxed text-ink/90">
                 &ldquo;{q.quote}&rdquo;
               </blockquote>
               <figcaption className="mt-6 text-sm">
-                <div className="font-semibold text-cream">{q.name}</div>
-                <div className="text-cream/50">{q.tag}</div>
+                <div className="font-semibold text-ink">{q.name}</div>
+                <div className="text-ink/50">{q.tag}</div>
               </figcaption>
             </figure>
           ))}

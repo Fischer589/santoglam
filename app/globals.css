@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --ink: 26 24 22;
-  --cream: 246 242 235;
-  --paper: 250 247 242;
-  --brass: 168 122 65;
-  --brass-bright: 196 152 92;
-  --moss: 74 84 69;
-  --line: 26 24 22;
+  /* Editorial, bright, silk/cloud palette — warm ivory paper,
+     soft champagne cards, dusty blush accents, warm charcoal ink,
+     antique gold brass for CTAs and emphasis. */
+  --ink: 46 39 34; /* warm charcoal — never pure black, stays soft */
+  --paper: 253 249 243; /* main page background — warm ivory */
+  --cream: 247 240 230; /* card / alt-surface background — champagne */
+  --blush: 238 223 209; /* dusty blush/silk accent for gradients */
+  --brass: 168 122 66; /* antique gold accent */
 }
 
 * {
@@ -31,24 +32,8 @@ body {
   font-family: var(--font-display);
 }
 
-.text-brass {
-  color: rgb(var(--brass));
-}
-
-.bg-brass {
-  background-color: rgb(var(--brass));
-}
-
-.bg-ink {
-  background-color: rgb(var(--ink));
-}
-
-.bg-cream {
-  background-color: rgb(var(--cream));
-}
-
 ::selection {
-  background: rgb(var(--brass) / 0.25);
+  background: rgb(var(--brass) / 0.22);
   color: rgb(var(--ink));
 }
 
@@ -61,9 +46,40 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Soft "silk fabric" gradient wash — used behind the hero and other
+   editorial moments instead of a photograph, so nothing can 404. */
+.silk-wash {
+  background:
+    radial-gradient(60% 50% at 15% 10%, rgb(var(--blush) / 0.9), transparent 60%),
+    radial-gradient(55% 45% at 85% 15%, rgb(var(--brass) / 0.16), transparent 65%),
+    radial-gradient(70% 60% at 50% 100%, rgb(var(--cream) / 1), transparent 70%),
+    linear-gradient(180deg, rgb(var(--paper)) 0%, rgb(var(--cream)) 100%);
+}
+
+.silk-blob {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(64px);
+  pointer-events: none;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(2%, -3%) scale(1.05);
+  }
+}
+
+.animate-drift {
+  animation: drift 18s ease-in-out infinite;
 }
 
 @keyframes marquee {
@@ -119,5 +135,5 @@ body {
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 48px -24px rgb(var(--ink) / 0.35);
+  box-shadow: 0 24px 48px -24px rgb(var(--ink) / 0.18);
 }
