@@ -128,8 +128,9 @@ export default function ScentsPage() {
               <p className="mt-2 font-display text-lg italic text-ink/50">
                 Full-size. Genuine. Direct. Free shipping.
               </p>
+              <div className="mt-6 h-px w-16 bg-brass/40" />
             </div>
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-9">
               {mens.map((s) => (
                 <ScentCard key={s.id} scent={s} />
               ))}
@@ -150,8 +151,9 @@ export default function ScentsPage() {
               <p className="mt-2 font-display text-lg italic text-ink/50">
                 Full-size. Genuine. Direct. Free shipping.
               </p>
+              <div className="mt-6 h-px w-16 bg-brass/40" />
             </div>
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-9">
               {womens.map((s) => (
                 <ScentCard key={s.id} scent={s} />
               ))}

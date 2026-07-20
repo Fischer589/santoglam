@@ -9,6 +9,10 @@ export interface Scent {
   compareAt: number
   badge?: string
   image: string
+  /** Optional second authentic photo (box, alternate angle) used for hover-swap and gallery. */
+  secondaryImage?: string
+  /** True when `image` is a verified authentic product photo (not a placeholder render). */
+  authentic?: boolean
   buyUrl: string
 }
 
@@ -17,6 +21,15 @@ function savingsPct(price: number, compareAt: number) {
 }
 
 // Prices include free US shipping (built in, not charged separately).
+//
+// IMAGE SOURCING NOTE: 14 of 16 bottles below use verified authentic product
+// photography (background-removed, matched by brand/bottle/cap/label against
+// the source photo library). Two items — Hawas and Bleu de Chanel — could not
+// be matched to a correct authentic photo in the current photo library (the
+// only Hawas photos available were the "Elixir" and "For Her" flankers, and no
+// Bleu de Chanel photo existed at all), so they remain on their prior
+// placeholder image rather than risk showing the wrong bottle. Flagged with
+// `authentic: false` — swap in a real photo as soon as one is sourced.
 export const scents: Scent[] = [
   {
     id: "the-one",
@@ -28,7 +41,9 @@ export const scents: Scent[] = [
     price: 75,
     compareAt: 123,
     badge: "Bestseller",
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/015e0efb-5ca0-4c97-8e37-9dfe933e4498.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/ae3b04dd-5e9d-4e7c-ae92-2aa6ec342de3.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/d7ad3f11-f241-4f72-a0c6-beb82b9d7cc3.webp",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/3cI3cvfZL2FSebp0cH8og0v",
   },
   {
@@ -40,7 +55,9 @@ export const scents: Scent[] = [
     gender: "men",
     price: 84,
     compareAt: 125,
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/a97db5e9-9c52-4968-bbbe-933af164f310.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/bb22f488-8a94-4785-b8d9-9e9431dda2d8.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/ddf92b8e-cebe-4646-bc1a-d1a519ec2c36.jpeg",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/7sY4gz5l7a8kfft2kP8og0x",
   },
   {
@@ -53,7 +70,8 @@ export const scents: Scent[] = [
     price: 90,
     compareAt: 122,
     badge: "Bestseller",
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/a72896a8-02a8-4856-bb8a-172a630d0391.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/035c8d5f-6921-4901-8067-e443c28335bf.png",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/aFa4gz3cZ4O09V98Jd8og0w",
   },
   {
@@ -67,6 +85,7 @@ export const scents: Scent[] = [
     compareAt: 120,
     badge: "Best Value",
     image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/a97db5e9-9c52-4968-bbbe-933af164f310.png",
+    authentic: false,
     buyUrl: "https://buy.stripe.com/6oU8wP5l74O09V9e3x8og0u",
   },
   {
@@ -78,7 +97,9 @@ export const scents: Scent[] = [
     gender: "men",
     price: 102,
     compareAt: 135,
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/fd43eeb2-f8a6-42bb-b015-0b8dc65d3beb.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/14916245-ad0f-490e-bc74-6f4000c618ef.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/c52c549c-40bc-4f87-b2e4-929cb2db876b.jpeg",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/8x200jdRDdkw6IX8Jd8og0B",
   },
   {
@@ -90,7 +111,9 @@ export const scents: Scent[] = [
     gender: "men",
     price: 90,
     compareAt: 139,
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/fd43eeb2-f8a6-42bb-b015-0b8dc65d3beb.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/81684bd8-2cc1-412b-9494-6b356e044d4a.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/b94169fd-3d03-4df2-97ac-6bca95e0b4d0.webp",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/4gM3cv3cZ94g9V90cH8og0A",
   },
   {
@@ -102,7 +125,9 @@ export const scents: Scent[] = [
     gender: "men",
     price: 71,
     compareAt: 127,
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/015e0efb-5ca0-4c97-8e37-9dfe933e4498.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/f6106474-8b90-4b27-888f-19571f927f1d.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/6237fd02-a62e-4aff-a689-d8705891f560.webp",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/3cI9AT5l7a8k6IX8Jd8og0z",
   },
   {
@@ -116,6 +141,7 @@ export const scents: Scent[] = [
     compareAt: 185,
     badge: "Prestige",
     image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/fd43eeb2-f8a6-42bb-b015-0b8dc65d3beb.png",
+    authentic: false,
     buyUrl: "https://buy.stripe.com/6oU5kDdRD94gc3hcZt8og0y",
   },
   {
@@ -128,7 +154,9 @@ export const scents: Scent[] = [
     price: 116,
     compareAt: 164,
     badge: "Bestseller",
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/1c3e9c2e-b2fc-415f-9e17-deda1073d877.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/14dc3d3b-de5b-4c81-834e-ee90fa22a5d3.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/5cd9e797-ac37-46c5-acab-66bf5700852a.jpeg",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/8x228rbJvgwI8R57F98og0C",
   },
   {
@@ -141,7 +169,9 @@ export const scents: Scent[] = [
     price: 129,
     compareAt: 172,
     badge: "Bestseller",
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/2b893ea1-95f8-4181-b7ba-108aa5eb68b0.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/3a47a0de-d04a-4434-b7c2-92e4decf3019.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/15d9cc9b-1b38-4e93-8243-3cf73566dd61.webp",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/8x23cv28V4O0gjx0cH8og0E",
   },
   {
@@ -153,7 +183,9 @@ export const scents: Scent[] = [
     gender: "women",
     price: 135,
     compareAt: 180,
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/2b893ea1-95f8-4181-b7ba-108aa5eb68b0.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/9137c6c8-d9e2-447e-acc6-9368aae61016.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/2109e878-d277-4db8-9c8b-ccad0e9c8eb3.webp",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/bJedR99Bndkw7N1bVp8og0F",
   },
   {
@@ -166,7 +198,9 @@ export const scents: Scent[] = [
     price: 105,
     compareAt: 182,
     badge: "Best Value",
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/de915b54-ea35-4361-b5f9-65d8ace093d2.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/ca197608-4d6f-4f89-84d8-6cfa5a0db792.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/33d39888-ae85-4dc6-8215-c03f84061f1d.webp",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/5kQ9ATbJv80c5ET4sX8og0D",
   },
   {
@@ -179,7 +213,9 @@ export const scents: Scent[] = [
     price: 183,
     compareAt: 192,
     badge: "Prestige",
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/2b893ea1-95f8-4181-b7ba-108aa5eb68b0.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/7a76e4f1-3296-4a91-a4f9-f97b6f1c263d.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/15d9cc9b-1b38-4e93-8243-3cf73566dd61.webp",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/9B67sL6pbfsE0kz6B58og0G",
   },
   {
@@ -191,7 +227,9 @@ export const scents: Scent[] = [
     gender: "women",
     price: 80,
     compareAt: 137,
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/de915b54-ea35-4361-b5f9-65d8ace093d2.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/676cf07d-f299-4301-b9e9-da09a662ba99.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/ac5e03fb-afb0-45fe-9063-2447e379d3da.webp",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/6oU9AT8xj6W83wL5x18og0I",
   },
   {
@@ -203,7 +241,9 @@ export const scents: Scent[] = [
     gender: "women",
     price: 89,
     compareAt: 146,
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/5b7a2f36-2df3-42c7-89e7-c74b3b5ab66f.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/e6ce2f8a-ff01-4e82-a084-f79914042e1b.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/17db1642-31fb-4ef9-8165-da9c8f15864c.jpeg",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/9B66oHbJva8kaZd9Nh8og0H",
   },
   {
@@ -215,7 +255,9 @@ export const scents: Scent[] = [
     gender: "women",
     price: 108,
     compareAt: 115,
-    image: "https://galaxy-prod.tlcdn.com/gen/user_32yYblHkbisLQe7Nwwn2NH6XK4h/1c3e9c2e-b2fc-415f-9e17-deda1073d877.png",
+    image: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/33fdbd37-a53d-4949-8ebc-1ce99969f144.png",
+    secondaryImage: "https://galaxy-prod.tlcdn.com/gen/user_3CP3WzpTXEewlb62LzPBeHUzEJS/1eb776bf-bfee-41f4-89ca-61e8266e23c4.jpeg",
+    authentic: true,
     buyUrl: "https://buy.stripe.com/3cI9AT7tf0xK3wLaRl8og0J",
   },
 ]
