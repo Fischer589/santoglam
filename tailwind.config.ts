@@ -57,6 +57,7 @@ const config: Config = {
         cream: "rgb(var(--cream) / <alpha-value>)",
         blush: "rgb(var(--blush) / <alpha-value>)",
         brass: "rgb(var(--brass) / <alpha-value>)",
+        jewel: "rgb(var(--jewel) / <alpha-value>)",
       },
       borderRadius: {
         lg: "var(--radius)",

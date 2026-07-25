@@ -38,7 +38,7 @@ export function Testimonials() {
           {quotes.map((q) => (
             <figure
               key={q.name}
-              className="rounded-2xl border border-ink/10 bg-paper/80 p-8 shadow-[0_20px_40px_-28px_rgb(46_39_34/0.35)] backdrop-blur-sm"
+              className="rounded-2xl border border-ink/10 bg-paper/80 p-8 shadow-[0_20px_40px_-28px_rgb(17_17_19/0.35)] backdrop-blur-sm"
             >
               <div className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (

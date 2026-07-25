@@ -10,6 +10,10 @@ export function Hero() {
         style={{ animationDelay: "-6s" }}
       />
       <div
+        className="silk-blob animate-drift right-[10%] bottom-[-25%] h-[340px] w-[340px] bg-jewel/[0.07]"
+        style={{ animationDelay: "-13s" }}
+      />
+      <div
         className="silk-blob animate-drift bottom-[-20%] left-[20%] h-[460px] w-[460px] bg-cream"
         style={{ animationDelay: "-11s" }}
       />
@@ -36,7 +40,7 @@ export function Hero() {
         <div className="animate-fade-up delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
           <a
             href="#hotel"
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-bold uppercase tracking-wide text-cream shadow-[0_18px_36px_-16px_rgb(46_39_34/0.45)] transition-all hover:bg-brass hover:text-ink"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-bold uppercase tracking-wide text-cream shadow-[0_18px_36px_-16px_rgb(17_17_19/0.45)] transition-all hover:bg-brass hover:text-ink"
           >
             Shop The Hotel Room Edit
             <span className="transition-transform group-hover:translate-x-1">

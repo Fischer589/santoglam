@@ -3,14 +3,16 @@
 @tailwind utilities;
 
 :root {
-  /* Editorial, bright, silk/cloud palette — warm ivory paper,
-     soft champagne cards, dusty blush accents, warm charcoal ink,
-     antique gold brass for CTAs and emphasis. */
-  --ink: 46 39 34; /* warm charcoal — never pure black, stays soft */
-  --paper: 253 249 243; /* main page background — warm ivory */
-  --cream: 247 240 230; /* card / alt-surface background — champagne */
-  --blush: 238 223 209; /* dusty blush/silk accent for gradients */
-  --brass: 168 122 66; /* antique gold accent */
+  /* Maison palette — Chanel-black restraint with Gucci-warm richness.
+     True near-black ink (not brown), crisp ivory paper, soft pearl
+     cream cards, a Chanel camellia-pink blush, a luminous true-gold
+     brass, and a deep emerald jewel accent for layered richness. */
+  --ink: 17 17 19; /* near-black, cool neutral — no brown undertone */
+  --paper: 251 250 247; /* main page background — crisp ivory */
+  --cream: 244 241 235; /* card / alt-surface background — soft pearl */
+  --blush: 237 219 219; /* camellia-pink silk accent for gradients */
+  --brass: 197 162 74; /* true luminous gold — warm, not muddy */
+  --jewel: 13 46 36; /* deep emerald — Gucci-style richness accent */
 }
 
 * {
@@ -55,8 +57,9 @@ body {
    editorial moments instead of a photograph, so nothing can 404. */
 .silk-wash {
   background:
-    radial-gradient(60% 50% at 15% 10%, rgb(var(--blush) / 0.9), transparent 60%),
-    radial-gradient(55% 45% at 85% 15%, rgb(var(--brass) / 0.16), transparent 65%),
+    radial-gradient(60% 50% at 15% 10%, rgb(var(--blush) / 0.85), transparent 60%),
+    radial-gradient(55% 45% at 85% 15%, rgb(var(--brass) / 0.18), transparent 65%),
+    radial-gradient(40% 35% at 50% 0%, rgb(var(--jewel) / 0.05), transparent 70%),
     radial-gradient(70% 60% at 50% 100%, rgb(var(--cream) / 1), transparent 70%),
     linear-gradient(180deg, rgb(var(--paper)) 0%, rgb(var(--cream)) 100%);
 }

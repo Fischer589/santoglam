@@ -12,7 +12,7 @@ export function ScentCard({ scent }: { scent: Scent }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Shop ${scent.brand} ${scent.name} — $${scent.price}`}
-      className="scent-card group relative flex flex-col overflow-hidden rounded-[28px] border border-ink/10 bg-paper shadow-[0_1px_2px_rgb(46_39_34/0.04)] transition-all duration-500 hover:-translate-y-1.5 hover:border-ink/20 hover:shadow-[0_32px_64px_-28px_rgb(46_39_34/0.28)]"
+      className="scent-card group relative flex flex-col overflow-hidden rounded-[28px] border border-ink/10 bg-paper shadow-[0_1px_2px_rgb(17_17_19/0.04)] transition-all duration-500 hover:-translate-y-1.5 hover:border-ink/20 hover:shadow-[0_32px_64px_-28px_rgb(17_17_19/0.28)]"
     >
       {/* Badges */}
       <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-start justify-between p-4">

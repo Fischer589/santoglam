@@ -36,6 +36,10 @@ export default function ScentsPage() {
             className="silk-blob animate-drift right-[-15%] top-[10%] h-[380px] w-[380px] bg-brass/10"
             style={{ animationDelay: "-6s" }}
           />
+          <div
+            className="silk-blob animate-drift right-[10%] bottom-[-25%] h-[340px] w-[340px] bg-jewel/[0.07]"
+            style={{ animationDelay: "-13s" }}
+          />
           <div className="relative mx-auto flex max-w-7xl flex-col px-6 pb-20 pt-16 lg:px-10 lg:pb-28 lg:pt-24">
             <div className="animate-fade-up flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.2em] text-brass">
               <Sparkles className="h-3.5 w-3.5" />
@@ -58,7 +62,7 @@ export default function ScentsPage() {
             <div className="animate-fade-up delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
                 href="#mens"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-bold uppercase tracking-wide text-cream shadow-[0_18px_36px_-16px_rgb(46_39_34/0.45)] transition-all hover:bg-brass hover:text-ink"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-bold uppercase tracking-wide text-cream shadow-[0_18px_36px_-16px_rgb(17_17_19/0.45)] transition-all hover:bg-brass hover:text-ink"
               >
                 Shop The Edit
                 <span className="transition-transform group-hover:translate-x-1">
