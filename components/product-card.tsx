@@ -9,7 +9,7 @@ export function ProductCard({ product }: { product: Product }) {
       href={product.url}
       target="_blank"
       rel="noopener noreferrer sponsored"
-      className="card-hover group relative flex flex-col overflow-hidden rounded-2xl border border-ink/10 bg-paper"
+      className="card-hover group relative flex flex-col overflow-hidden rounded-2xl border border-brass/25 bg-paper transition-colors duration-300 hover:border-brass/50"
     >
       {product.badge && (
         <span className="absolute left-3 top-3 z-10 rounded-full bg-ink px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-cream">

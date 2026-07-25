@@ -5,13 +5,14 @@
 :root {
   /* Maison palette — Chanel-black restraint with Gucci-warm richness.
      True near-black ink (not brown), crisp ivory paper, soft pearl
-     cream cards, a Chanel camellia-pink blush, a luminous true-gold
-     brass, and a deep emerald jewel accent for layered richness. */
+     cream cards, a Chanel camellia-pink blush, a saturated metallic-gold
+     brass (bumped from a muted tan-gold to read as unmistakably gold),
+     and a deep emerald jewel accent for layered richness. */
   --ink: 17 17 19; /* near-black, cool neutral — no brown undertone */
   --paper: 251 250 247; /* main page background — crisp ivory */
   --cream: 244 241 235; /* card / alt-surface background — soft pearl */
   --blush: 237 219 219; /* camellia-pink silk accent for gradients */
-  --brass: 197 162 74; /* true luminous gold — warm, not muddy */
+  --brass: 212 175 55; /* saturated metallic gold — unmistakably gold */
   --jewel: 13 46 36; /* deep emerald — Gucci-style richness accent */
 }
 
@@ -62,6 +63,19 @@ body {
     radial-gradient(40% 35% at 50% 0%, rgb(var(--jewel) / 0.05), transparent 70%),
     radial-gradient(70% 60% at 50% 100%, rgb(var(--cream) / 1), transparent 70%),
     linear-gradient(180deg, rgb(var(--paper)) 0%, rgb(var(--cream)) 100%);
+}
+
+
+/* Dramatic near-black "boutique window" hero backdrop — Chanel/Gucci
+   window-display feel. Gold + emerald glow instead of a flat wash.
+   Used only by the two primary hero sections; everything else keeps
+   the light .silk-wash treatment. */
+.noir-wash {
+  background:
+    radial-gradient(65% 55% at 20% 0%, rgb(var(--jewel) / 0.45), transparent 62%),
+    radial-gradient(55% 50% at 85% 20%, rgb(var(--brass) / 0.20), transparent 65%),
+    radial-gradient(60% 60% at 50% 100%, rgb(var(--jewel) / 0.25), transparent 70%),
+    linear-gradient(165deg, rgb(10 10 11) 0%, rgb(var(--ink)) 55%, rgb(6 6 7) 100%);
 }
 
 .silk-blob {

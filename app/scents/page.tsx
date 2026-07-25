@@ -29,15 +29,15 @@ export default function ScentsPage() {
       <AnnouncementBar messages={scentsMessages} />
       <Nav />
       <main>
-        {/* Hero */}
-        <section className="silk-wash grain relative overflow-hidden">
-          <div className="silk-blob animate-drift left-[-10%] top-[-10%] h-[420px] w-[420px] bg-blush/70" />
+        {/* Hero — dramatic near-black boutique-window backdrop */}
+        <section className="noir-wash grain relative overflow-hidden text-cream">
+          <div className="silk-blob animate-drift left-[-10%] top-[-10%] h-[420px] w-[420px] bg-jewel/30" />
           <div
-            className="silk-blob animate-drift right-[-15%] top-[10%] h-[380px] w-[380px] bg-brass/10"
+            className="silk-blob animate-drift right-[-15%] top-[10%] h-[380px] w-[380px] bg-brass/20"
             style={{ animationDelay: "-6s" }}
           />
           <div
-            className="silk-blob animate-drift right-[10%] bottom-[-25%] h-[340px] w-[340px] bg-jewel/[0.07]"
+            className="silk-blob animate-drift right-[10%] bottom-[-25%] h-[340px] w-[340px] bg-jewel/25"
             style={{ animationDelay: "-13s" }}
           />
           <div className="relative mx-auto flex max-w-7xl flex-col px-6 pb-20 pt-16 lg:px-10 lg:pb-28 lg:pt-24">
@@ -47,13 +47,13 @@ export default function ScentsPage() {
               department store markup
             </div>
 
-            <h1 className="animate-fade-up delay-1 mt-6 max-w-3xl font-display text-5xl font-medium leading-[1.05] tracking-tight text-ink sm:text-6xl">
+            <h1 className="animate-fade-up delay-1 mt-6 max-w-3xl font-display text-5xl font-medium leading-[1.05] tracking-tight text-cream sm:text-6xl">
               Full-size designer fragrance.{" "}
               <span className="italic text-brass">Free shipping.</span> Real
               savings.
             </h1>
 
-            <p className="animate-fade-up delay-2 mt-6 max-w-xl text-lg leading-relaxed text-ink/70">
+            <p className="animate-fade-up delay-2 mt-6 max-w-xl text-lg leading-relaxed text-cream/70">
               No travel minis, no samples — every bottle here is the genuine,
               full-size fragrance you already know, shipped free, at a price
               that skips the department store counter markup entirely.
@@ -62,7 +62,7 @@ export default function ScentsPage() {
             <div className="animate-fade-up delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
                 href="#mens"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-bold uppercase tracking-wide text-cream shadow-[0_18px_36px_-16px_rgb(17_17_19/0.45)] transition-all hover:bg-brass hover:text-ink"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-brass px-8 py-4 text-sm font-bold uppercase tracking-wide text-ink shadow-[0_18px_36px_-16px_rgb(212_175_55/0.5)] transition-all hover:bg-cream"
               >
                 Shop The Edit
                 <span className="transition-transform group-hover:translate-x-1">
@@ -71,28 +71,28 @@ export default function ScentsPage() {
               </a>
               <a
                 href="#faq"
-                className="text-sm font-semibold text-ink/60 underline underline-offset-4 transition-colors hover:text-ink"
+                className="text-sm font-semibold text-cream/60 underline underline-offset-4 transition-colors hover:text-cream"
               >
                 Is this real perfume? Read the FAQ
               </a>
             </div>
 
-            <div className="animate-fade-up delay-4 mt-14 grid grid-cols-1 gap-4 border-t border-ink/10 pt-8 sm:grid-cols-3">
+            <div className="animate-fade-up delay-4 mt-14 grid grid-cols-1 gap-4 border-t border-cream/15 pt-8 sm:grid-cols-3">
               <div className="flex items-center gap-3">
                 <ShieldCheck className="h-5 w-5 text-brass" />
-                <span className="text-sm text-ink/65">
+                <span className="text-sm text-cream/65">
                   100% genuine, full-size fragrance
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Lock className="h-5 w-5 text-brass" />
-                <span className="text-sm text-ink/65">
+                <span className="text-sm text-cream/65">
                   Secure checkout, encrypted by Stripe
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Truck className="h-5 w-5 text-brass" />
-                <span className="text-sm text-ink/65">
+                <span className="text-sm text-cream/65">
                   Free shipping, carefully packaged, on every order
                 </span>
               </div>
