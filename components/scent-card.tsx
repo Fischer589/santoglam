@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { ArrowUpRight, BadgeCheck } from "lucide-react"
 import type { Scent } from "@/lib/scents"
 import { savingsPct } from "@/lib/scents"
 
@@ -7,94 +6,42 @@ export function ScentCard({ scent }: { scent: Scent }) {
   const pct = savingsPct(scent.price, scent.compareAt)
 
   return (
-    <a
-      href={scent.buyUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`Shop ${scent.brand} ${scent.name} — $${scent.price}`}
-      className="scent-card group relative flex flex-col overflow-hidden rounded-[28px] border border-brass/25 bg-paper shadow-[0_1px_2px_rgb(17_17_19/0.04)] transition-all duration-500 hover:-translate-y-1.5 hover:border-brass/50 hover:shadow-[0_32px_64px_-28px_rgb(17_17_19/0.28)]"
-    >
-      {/* Badges */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-start justify-between p-4">
-        <div className="flex flex-col gap-2">
-          {scent.badge && (
-            <span className="inline-flex w-fit items-center rounded-full bg-ink px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-cream shadow-sm">
-              {scent.badge}
-            </span>
-          )}
-        </div>
-        {pct > 0 && (
-          <span className="inline-flex w-fit items-center rounded-full bg-brass px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-ink shadow-sm">
-            Save {pct}%
-          </span>
-        )}
-      </div>
-
-      {/* Image stage — generous whitespace, the bottle is the hero */}
-      <div className="relative aspect-[4/5] w-full overflow-hidden bg-gradient-to-b from-cream to-paper sm:aspect-square">
+    <a href={scent.buyUrl} target="_blank" rel="noopener noreferrer" className="group flex flex-col">
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-stone">
         <Image
           src={scent.image}
-          alt={`${scent.brand} ${scent.name} — genuine bottle`}
+          alt={`${scent.brand} ${scent.name}`}
           fill
           sizes="(max-width: 768px) 50vw, 25vw"
-          className={`object-contain p-9 transition-all duration-700 ease-out sm:p-10 ${
-            scent.secondaryImage
-              ? "group-hover:scale-[1.03] group-hover:opacity-0"
-              : "group-hover:scale-[1.04]"
-          }`}
+          className="img-zoom object-contain p-10"
         />
-        {scent.secondaryImage && (
-          <Image
-            src={scent.secondaryImage}
-            alt={`${scent.brand} ${scent.name} — detail view`}
-            fill
-            sizes="(max-width: 768px) 50vw, 25vw"
-            className="object-contain p-9 opacity-0 transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:opacity-100 sm:p-10"
-          />
+        {scent.badge && (
+          <span className="label absolute left-4 top-4 bg-bone px-2.5 py-1 text-ink/60">
+            {scent.badge}
+          </span>
         )}
       </div>
+      <div className="mt-5 flex items-start justify-between gap-2">
+        <p className="label text-ink/40">{scent.brand}</p>
+        <p className="label text-ink/40">{scent.size}</p>
+      </div>
+      <h3 className="mt-1 font-serif text-2xl italic text-ink">{scent.name}</h3>
+      <p className="mt-1.5 text-sm leading-snug text-ink/50">{scent.blurb}</p>
 
-      {/* Content */}
-      <div className="flex flex-1 flex-col gap-2.5 p-6">
-        <div className="flex items-center justify-between gap-2">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-brass">
-            {scent.brand}
+      <div className="mt-4 flex items-center justify-between">
+        <div className="flex items-baseline gap-2.5">
+          <span className="font-serif text-xl text-ink">${scent.price}</span>
+          <span className="text-sm text-ink/35 line-through">
+            ${scent.compareAt}
           </span>
-          <span className="text-[10px] font-semibold uppercase tracking-wide text-ink/35">
-            {scent.size}
-          </span>
-        </div>
-
-        <h3 className="font-display text-xl font-medium leading-snug text-ink">
-          {scent.name}
-        </h3>
-
-        <p className="line-clamp-2 text-[13.5px] leading-relaxed text-ink/55">
-          {scent.blurb}
-        </p>
-
-        {scent.authentic && (
-          <div className="mt-0.5 flex items-center gap-1.5 text-[11px] font-semibold text-ink/45">
-            <BadgeCheck className="h-3.5 w-3.5 text-brass" />
-            100% genuine, full-size bottle
-          </div>
-        )}
-
-        <div className="mt-auto flex items-center justify-between gap-3 pt-5">
-          <div className="flex items-baseline gap-2">
-            <span className="font-display text-2xl font-medium text-ink">
-              ${scent.price}
-            </span>
-            <span className="text-[13px] text-ink/35 line-through">
-              ${scent.compareAt}
-            </span>
-          </div>
-          <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-ink px-5 py-3 text-xs font-bold uppercase tracking-wide text-cream shadow-sm transition-colors duration-300 group-hover:bg-brass group-hover:text-ink">
-            Buy Now
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </span>
+          {pct > 0 && (
+            <span className="label text-ink/40">Save {pct}%</span>
+          )}
         </div>
       </div>
+      <span className="label mt-3 inline-block w-fit border-b border-ink/25 pb-0.5 text-ink/70 transition-colors group-hover:border-ink group-hover:text-ink">
+        Shop Object →
+      </span>
     </a>
   )
 }

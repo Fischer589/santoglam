@@ -1,24 +1,16 @@
 import type { Metadata } from "next"
-import { ShieldCheck, Truck, Sparkles, Lock } from "lucide-react"
-import { AnnouncementBar } from "@/components/announcement-bar"
-import { Nav } from "@/components/nav"
-import { Footer } from "@/components/footer"
-import { StickyMobileCta } from "@/components/sticky-mobile-cta"
+import Image from "next/image"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 import { ScentCard } from "@/components/scent-card"
 import { scents } from "@/lib/scents"
+import { images } from "@/lib/editorial"
 
 export const metadata: Metadata = {
-  title: "The Scent Edit — Full-Size Designer Fragrances | Santo Glam",
+  title: "The SantoGlam Scent | Full-Size Designer Fragrance",
   description:
-    "Genuine, full-size designer fragrances at direct prices — no department store markup. Free shipping, secure checkout, real bottles, our own house edit.",
+    "Genuine, full-size designer fragrances sold directly by SantoGlam — free shipping, secure checkout, no department store markup.",
 }
-
-const scentsMessages = [
-  "Free shipping on every fragrance order",
-  "100% genuine, full-size bottles — never a dupe",
-  "Secure checkout by Stripe",
-  "New arrivals added regularly",
-]
 
 const mens = scents.filter((s) => s.gender === "men")
 const womens = scents.filter((s) => s.gender === "women")
@@ -26,115 +18,58 @@ const womens = scents.filter((s) => s.gender === "women")
 export default function ScentsPage() {
   return (
     <>
-      <AnnouncementBar messages={scentsMessages} />
-      <Nav />
+      <SiteHeader />
       <main>
-        {/* Hero — dramatic near-black boutique-window backdrop */}
-        <section className="noir-wash grain relative overflow-hidden text-cream">
-          <div className="silk-blob animate-drift left-[-10%] top-[-10%] h-[420px] w-[420px] bg-jewel/30" />
-          <div
-            className="silk-blob animate-drift right-[-15%] top-[10%] h-[380px] w-[380px] bg-brass/20"
-            style={{ animationDelay: "-6s" }}
+        <section className="relative h-[62vh] min-h-[440px] w-full overflow-hidden bg-ink">
+          <Image
+            src={images.scentCampaign}
+            alt="The SantoGlam Scent"
+            fill
+            priority
+            className="object-cover opacity-90"
           />
-          <div
-            className="silk-blob animate-drift right-[10%] bottom-[-25%] h-[340px] w-[340px] bg-jewel/25"
-            style={{ animationDelay: "-13s" }}
-          />
-          <div className="relative mx-auto flex max-w-7xl flex-col px-6 pb-20 pt-16 lg:px-10 lg:pb-28 lg:pt-24">
-            <div className="animate-fade-up flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.2em] text-brass">
-              <Sparkles className="h-3.5 w-3.5" />
-              Direct from Santo Glam &middot; free shipping &middot; no
-              department store markup
-            </div>
-
-            <h1 className="animate-fade-up delay-1 mt-6 max-w-3xl font-display text-5xl font-medium leading-[1.05] tracking-tight text-cream sm:text-6xl">
-              Full-size designer fragrance.{" "}
-              <span className="italic text-brass">Free shipping.</span> Real
-              savings.
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
+          <div className="relative z-10 mx-auto flex h-full max-w-[1440px] flex-col justify-end px-6 pb-14 lg:px-12 lg:pb-20">
+            <p className="label text-bone/60">A SantoGlam Original</p>
+            <h1 className="mt-4 max-w-2xl font-serif text-5xl font-light italic leading-tight text-bone sm:text-6xl">
+              Full-Size Fragrance.
+              <br />
+              Free Shipping. Real Savings.
             </h1>
-
-            <p className="animate-fade-up delay-2 mt-6 max-w-xl text-lg leading-relaxed text-cream/70">
-              No travel minis, no samples — every bottle here is the genuine,
-              full-size fragrance you already know, shipped free, at a price
-              that skips the department store counter markup entirely.
+            <p className="mt-5 max-w-md text-base text-bone/65">
+              Genuine, full-size designer fragrance, sold and shipped
+              directly by SantoGlam — the beginning of our own house edit.
             </p>
-
-            <div className="animate-fade-up delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <a
-                href="#mens"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-brass px-8 py-4 text-sm font-bold uppercase tracking-wide text-ink shadow-[0_18px_36px_-16px_rgb(212_175_55/0.5)] transition-all hover:bg-cream"
-              >
-                Shop The Edit
-                <span className="transition-transform group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
-              <a
-                href="#faq"
-                className="text-sm font-semibold text-cream/60 underline underline-offset-4 transition-colors hover:text-cream"
-              >
-                Is this real perfume? Read the FAQ
-              </a>
-            </div>
-
-            <div className="animate-fade-up delay-4 mt-14 grid grid-cols-1 gap-4 border-t border-cream/15 pt-8 sm:grid-cols-3">
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="h-5 w-5 text-brass" />
-                <span className="text-sm text-cream/65">
-                  100% genuine, full-size fragrance
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Lock className="h-5 w-5 text-brass" />
-                <span className="text-sm text-cream/65">
-                  Secure checkout, encrypted by Stripe
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Truck className="h-5 w-5 text-brass" />
-                <span className="text-sm text-cream/65">
-                  Free shipping, carefully packaged, on every order
-                </span>
-              </div>
-            </div>
+            <a
+              href="#mens"
+              className="label mt-8 inline-block w-fit border-b border-bone/40 pb-1 text-bone transition-colors hover:border-bone"
+            >
+              Shop the Edit →
+            </a>
           </div>
         </section>
 
-        {/* Why cheaper */}
-        <section className="mx-auto max-w-5xl px-6 py-20 text-center lg:px-10">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brass">
-            Why it&apos;s cheaper here
-          </p>
-          <h2 className="mx-auto mt-5 max-w-3xl font-display text-3xl font-medium leading-tight text-ink sm:text-4xl">
-            The bottle is identical. The <span className="italic text-brass/90">markup</span> is what&apos;s missing.
+        <section className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-12">
+          <p className="label text-ink/40">Why It&apos;s Cheaper Here</p>
+          <h2 className="mt-4 font-serif text-3xl font-light italic text-ink sm:text-4xl">
+            The bottle is identical. The markup is what&apos;s missing.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-ink/60">
-            Department stores and big-box retailers add layers of margin
-            before a fragrance ever reaches the shelf. We buy the same
-            authentic, full-size bottles through direct wholesale channels
-            and pass almost all of that savings straight to you — free
-            shipping included, every price below is shown next to what it
-            typically retails for, so you can see exactly what you&apos;re
-            saving.
+          <p className="mt-5 text-base leading-relaxed text-ink/55">
+            Department stores add layers of margin before a fragrance ever
+            reaches the shelf. SantoGlam buys the same authentic, full-size
+            bottles through direct wholesale channels and passes almost all
+            of that savings to you — free shipping included, and every price
+            is shown next to what it typically retails for.
           </p>
         </section>
 
-        {/* Men's grid */}
-        <section id="mens" className="scroll-mt-20 border-t border-ink/10 py-20">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <div className="max-w-xl">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-brass">
-                For Him
-              </p>
-              <h2 className="mt-3 font-display text-4xl font-medium leading-tight text-ink sm:text-5xl">
-                Men&apos;s Fragrance
-              </h2>
-              <p className="mt-2 font-display text-lg italic text-ink/50">
-                Full-size. Genuine. Direct. Free shipping.
-              </p>
-              <div className="mt-6 h-px w-16 bg-brass/40" />
-            </div>
-            <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-9">
+        <section id="mens" className="hairline-t scroll-mt-20 px-6 py-20 lg:px-12">
+          <div className="mx-auto max-w-[1440px]">
+            <p className="label text-ink/40">For Him</p>
+            <h2 className="mt-3 font-serif text-4xl font-light italic text-ink sm:text-5xl">
+              Men&apos;s Fragrance
+            </h2>
+            <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
               {mens.map((s) => (
                 <ScentCard key={s.id} scent={s} />
               ))}
@@ -142,22 +77,13 @@ export default function ScentsPage() {
           </div>
         </section>
 
-        {/* Women's grid */}
-        <section id="womens" className="scroll-mt-20 border-t border-ink/10 py-20">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <div className="max-w-xl">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-brass">
-                For Her
-              </p>
-              <h2 className="mt-3 font-display text-4xl font-medium leading-tight text-ink sm:text-5xl">
-                Women&apos;s Fragrance
-              </h2>
-              <p className="mt-2 font-display text-lg italic text-ink/50">
-                Full-size. Genuine. Direct. Free shipping.
-              </p>
-              <div className="mt-6 h-px w-16 bg-brass/40" />
-            </div>
-            <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-9">
+        <section id="womens" className="hairline-t px-6 py-20 lg:px-12">
+          <div className="mx-auto max-w-[1440px]">
+            <p className="label text-ink/40">For Her</p>
+            <h2 className="mt-3 font-serif text-4xl font-light italic text-ink sm:text-5xl">
+              Women&apos;s Fragrance
+            </h2>
+            <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
               {womens.map((s) => (
                 <ScentCard key={s.id} scent={s} />
               ))}
@@ -165,72 +91,56 @@ export default function ScentsPage() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section id="faq" className="silk-wash grain scroll-mt-20 py-24">
-          <div className="relative mx-auto max-w-3xl px-6 lg:px-10">
-            <div className="text-center">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-brass">
-                Before you buy
-              </p>
-              <h2 className="mt-3 font-display text-3xl font-medium text-ink sm:text-4xl">
-                Questions, answered
-              </h2>
-            </div>
-
-            <div className="mt-10 space-y-6">
-              <div className="rounded-2xl border border-ink/10 bg-paper/80 p-6">
-                <h3 className="font-display text-lg font-medium text-ink">
+        <section className="hairline-t px-6 py-24 lg:px-12">
+          <div className="mx-auto max-w-2xl">
+            <p className="label text-center text-ink/40">Before You Buy</p>
+            <div className="mt-10 space-y-8">
+              <div className="hairline-t pt-6">
+                <h3 className="font-serif text-xl italic text-ink">
                   Is this real, authentic perfume?
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/60">
-                  Yes. Every bottle is the genuine, full-size product from
-                  the actual brand — sourced through licensed wholesale
-                  distribution, not a knockoff or a dupe. The lower price
-                  reflects the distribution channel, not the quality.
+                <p className="mt-2 text-sm leading-relaxed text-ink/55">
+                  Yes. Every bottle is the genuine, full-size product from the
+                  actual brand — sourced through licensed wholesale
+                  distribution, not a knockoff or a dupe.
                 </p>
               </div>
-              <div className="rounded-2xl border border-ink/10 bg-paper/80 p-6">
-                <h3 className="font-display text-lg font-medium text-ink">
+              <div className="hairline-t pt-6">
+                <h3 className="font-serif text-xl italic text-ink">
                   Does shipping cost extra?
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/60">
+                <p className="mt-2 text-sm leading-relaxed text-ink/55">
                   No — shipping is free on every order and already included
-                  in the price you see. No surprise fee at checkout.
+                  in the price you see.
                 </p>
               </div>
-              <div className="rounded-2xl border border-ink/10 bg-paper/80 p-6">
-                <h3 className="font-display text-lg font-medium text-ink">
+              <div className="hairline-t pt-6">
+                <h3 className="font-serif text-xl italic text-ink">
                   How does checkout work?
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/60">
-                  Checkout is handled securely by Stripe — the same
-                  infrastructure used by millions of online stores. We never
-                  see or store your card details.
+                <p className="mt-2 text-sm leading-relaxed text-ink/55">
+                  Checkout is handled securely by Stripe. SantoGlam never
+                  sees or stores your card details.
                 </p>
               </div>
-              <div className="rounded-2xl border border-ink/10 bg-paper/80 p-6">
-                <h3 className="font-display text-lg font-medium text-ink">
+              <div className="hairline-t hairline-b pt-6 pb-6">
+                <h3 className="font-serif text-xl italic text-ink">
                   What if there&apos;s a problem with my order?
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/60">
-                  If your order arrives wrong, damaged, or incomplete, contact
-                  us within 7 days and we&apos;ll make it right with a
-                  replacement or refund. See our full{" "}
-                  <a
-                    href="/refund-policy"
-                    className="font-semibold text-ink underline underline-offset-2 hover:text-brass"
-                  >
+                <p className="mt-2 text-sm leading-relaxed text-ink/55">
+                  Contact us within 7 days and we&apos;ll make it right with a
+                  replacement or refund. See the full{" "}
+                  <a href="/refund-policy" className="text-ink underline underline-offset-2">
                     Shipping &amp; Returns policy
-                  </a>{" "}
-                  for details.
+                  </a>
+                  .
                 </p>
               </div>
             </div>
           </div>
         </section>
       </main>
-      <Footer />
-      <StickyMobileCta href="#mens" />
+      <SiteFooter />
     </>
   )
 }

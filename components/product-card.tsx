@@ -1,57 +1,51 @@
 import Image from "next/image"
-import { ArrowUpRight } from "lucide-react"
-import { StarRating } from "@/components/star-rating"
 import type { Product } from "@/lib/products"
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({
+  product,
+  size = "md",
+}: {
+  product: Product
+  size?: "lg" | "md" | "sm"
+}) {
+  const aspect = size === "lg" ? "aspect-[4/5]" : "aspect-square"
+
   return (
     <a
       href={product.url}
       target="_blank"
       rel="noopener noreferrer sponsored"
-      className="card-hover group relative flex flex-col overflow-hidden rounded-2xl border border-brass/25 bg-paper transition-colors duration-300 hover:border-brass/50"
+      className="group flex flex-col"
     >
-      {product.badge && (
-        <span className="absolute left-3 top-3 z-10 rounded-full bg-ink px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-cream">
-          {product.badge}
-        </span>
-      )}
-      <div className="relative aspect-square w-full bg-cream">
+      <div className={`relative ${aspect} w-full overflow-hidden bg-stone`}>
         <Image
           src={product.image}
           alt={`${product.brand} ${product.name}`}
           fill
-          sizes="(max-width: 768px) 50vw, 25vw"
-          className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 50vw, 33vw"
+          className="img-zoom object-contain p-8"
         />
       </div>
-      <div className="flex flex-1 flex-col gap-2 p-5">
-        <div className="flex items-center justify-between gap-2">
-          <span className="text-[11px] font-bold uppercase tracking-wide text-brass">
-            {product.brand}
-          </span>
-          {product.size && (
-            <span className="text-[11px] font-semibold uppercase tracking-wide text-ink/40">
-              {product.size}
-            </span>
+      <div className="mt-5 flex items-start justify-between gap-3">
+        <div>
+          <p className="label text-ink/40">{product.brand}</p>
+          <h3
+            className={`mt-1 font-serif italic text-ink ${
+              size === "lg" ? "text-2xl" : "text-xl"
+            }`}
+          >
+            {product.name}
+          </h3>
+          {size !== "sm" && (
+            <p className="mt-1.5 max-w-xs text-sm leading-snug text-ink/50">
+              {product.blurb}
+            </p>
           )}
         </div>
-        <h3 className="font-display text-lg font-medium leading-snug text-ink">
-          {product.name}
-        </h3>
-        <p className="line-clamp-2 text-sm leading-snug text-ink/55">
-          {product.blurb}
-        </p>
-        <div className="mt-1">
-          <StarRating rating={product.rating} reviews={product.reviews} />
-        </div>
-        <div className="mt-auto pt-4">
-          <span className="flex w-full items-center justify-center gap-1.5 rounded-full bg-ink px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-cream transition-colors group-hover:bg-brass">
-            Check Price on Amazon
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </span>
-        </div>
       </div>
+      <span className="label mt-3 inline-block w-fit border-b border-ink/25 pb-0.5 text-ink/70 transition-colors group-hover:border-ink group-hover:text-ink">
+        Discover →
+      </span>
     </a>
   )
 }
