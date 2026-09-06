@@ -49,15 +49,17 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
-        // Santo Glam editorial palette — registered as real Tailwind colors
-        // so opacity modifiers (e.g. text-ink/70) and variants (fill-brass,
-        // border-ink/10) all generate correctly.
+        // SantoGlam quiet-luxury palette — registered as real Tailwind
+        // colors (via CSS variables) so opacity modifiers (text-ink/60),
+        // border utilities, and fill/stroke variants all generate correctly.
         ink: "rgb(var(--ink) / <alpha-value>)",
-        paper: "rgb(var(--paper) / <alpha-value>)",
-        cream: "rgb(var(--cream) / <alpha-value>)",
-        blush: "rgb(var(--blush) / <alpha-value>)",
-        brass: "rgb(var(--brass) / <alpha-value>)",
-        jewel: "rgb(var(--jewel) / <alpha-value>)",
+        bone: "rgb(var(--bone) / <alpha-value>)",
+        stone: "rgb(var(--stone) / <alpha-value>)",
+        silver: "rgb(var(--silver) / <alpha-value>)",
+      },
+      fontFamily: {
+        serif: ["var(--font-serif)"],
+        sans: ["var(--font-sans)"],
       },
       borderRadius: {
         lg: "var(--radius)",

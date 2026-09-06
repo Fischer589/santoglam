@@ -1,38 +1,37 @@
 import type { Metadata } from "next"
-import { Fraunces, Manrope } from "next/font/google"
+import { Cormorant_Garamond, Jost } from "next/font/google"
 import "./globals.css"
 
-const display = Fraunces({
+const serif = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-serif",
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
 })
 
-const body = Manrope({
+const sans = Jost({
   subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+  weight: ["300", "400", "500", "600"],
 })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://santoglam.com"),
-  title: "Santo Glam — Turn Your Bedroom Into a 5-Star Hotel Suite",
+  title: "SANTOGLAM — The Art of Living Well",
   description:
-    "Curated hotel-quality objects for the bed, the vanity, and the ritual hour — the exact pieces reviewers repurchase. Free Prime shipping, easy returns, shop the edit.",
+    "The feeling of a five-star stay, without leaving home. SantoGlam curates the objects, rituals, and details that make ordinary spaces feel extraordinary.",
   openGraph: {
-    title: "Santo Glam — Turn Your Bedroom Into a 5-Star Hotel Suite",
+    title: "SANTOGLAM — The Art of Living Well",
     description:
-      "The curated edit of hotel-room objects real reviewers rebuy. Shop the bed, the vanity, and the ritual hour.",
+      "You don't need more things. You need better ones. SantoGlam curates the objects, rituals, and details that make ordinary spaces feel extraordinary.",
     url: "https://santoglam.com",
-    siteName: "Santo Glam",
+    siteName: "SANTOGLAM",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Santo Glam — Turn Your Bedroom Into a 5-Star Hotel Suite",
-    description:
-      "The curated edit of hotel-room objects real reviewers rebuy.",
+    title: "SANTOGLAM — The Art of Living Well",
+    description: "The feeling of a five-star stay, without leaving home.",
   },
 }
 
@@ -42,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <body>{children}</body>
     </html>
   )
