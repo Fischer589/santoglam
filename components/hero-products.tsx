@@ -14,7 +14,7 @@ export function HeroProducts() {
               ? allProducts.find((p) => p.id === hp.productId)
               : undefined
             const href = hp.href ?? product?.url ?? "#"
-            const image = product?.image
+            const image = product?.image ?? hp.image
 
             return (
               <a
@@ -31,7 +31,11 @@ export function HeroProducts() {
                       alt={hp.label}
                       fill
                       sizes="(max-width: 768px) 50vw, 25vw"
-                      className="img-zoom object-contain p-10"
+                      className={
+                        product
+                          ? "img-zoom object-contain p-10"
+                          : "img-zoom object-cover"
+                      }
                     />
                   ) : (
                     <div className="flex h-full items-center justify-center">

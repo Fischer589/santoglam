@@ -124,6 +124,7 @@ export interface HeroProduct {
   tagline: string
   productId?: string
   href?: string
+  image?: string
   cta: string
 }
 
@@ -147,6 +148,7 @@ export const heroProducts: HeroProduct[] = [
     label: "The Scent",
     tagline: "The smell of checking into somewhere expensive.",
     href: "/scents",
+    image: images.scentCampaign,
     cta: "Discover →",
   },
   {
